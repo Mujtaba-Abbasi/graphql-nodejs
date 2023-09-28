@@ -10,7 +10,7 @@ import Resolvers from "./resolvers/index";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = 5000;
 const DB_URL = process.env.DB_URL;
 
 async function startServer() {
@@ -26,12 +26,12 @@ async function startServer() {
   // app.use("/graphql", expressMiddleware(server));
 
   app.listen(PORT, () => {
-    mongoose
-      .connect(DB_URL)
-      .then(() => {
-        console.log("Connection established successfully");
-      })
-      .catch((e) => console.log({ e }));
+    // mongoose
+    //   .connect(DB_URL)
+    //   .then(() => {
+    //     console.log("Connection established successfully");
+    //   })
+    //   .catch((e) => console.log({ e }));
     console.log(`Server has started: ${PORT}`);
   });
 }
